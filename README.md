@@ -32,3 +32,6 @@ const routes: Routes = [
   },
 ```
 3. Run your host app and visit: https://localhost:4200/#/plugin
+
+   <img width="1920" height="968" alt="image" src="https://github.com/user-attachments/assets/21b7abc9-cef8-461a-9963-ee28e27887a5" />
+
