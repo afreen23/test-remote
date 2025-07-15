@@ -1,27 +1,37 @@
-# Remote
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve ` for a dev server. Navigate to `http://localhost:4300/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Host app changes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Update `src/assets/module-federation.manifest.json `
 
-## Build
+```json
+{ 
+  "remote-app": "http://localhost:4300/remoteEntry.js" 
+}
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Update `src/app/app-routing.module.ts`
 
-## Running unit tests
+```typescript
+import { loadRemoteModule } from '@nx/angular/mf'; 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+... 
 
-## Running end-to-end tests
+const routes: Routes = [ 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  { 
 
-## Further help
+    path: 'plugin', 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+    loadChildren: () => 
+
+      loadRemoteModule('remote-app', './Module').then((m) => m.RemotePluginModule) 
+
+  },
+```
+3. Run your host app and visit: https://localhost:4200/#/plugin
