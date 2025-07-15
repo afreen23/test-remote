@@ -1,9 +1,6 @@
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20.
-
 ## Development server
 
-Run `ng serve ` for a dev server. Navigate to `http://localhost:4300/`. The application will automatically reload if you change any of the source files.
+Firstly, run `ng serve ` for running the remote app. Navigate to `http://localhost:4300/`. The application will automatically reload if you change any of the source files.
 
 ## Host app changes
 
