@@ -2,7 +2,7 @@
 
 Firstly, run `ng serve ` for running the remote app. Navigate to `http://localhost:4300/`. The application will automatically reload if you change any of the source files.
 
-## Host app changes
+## Host app changes (Dashboard)
 
 1. Update `src/assets/module-federation.manifest.json `
 
